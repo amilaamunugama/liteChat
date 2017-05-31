@@ -1,0 +1,39 @@
+.chat-box {
+    width: 500px;
+    height: 700px;
+    background: greenyellow;
+    margin: 0 auto;
+    position: relative;
+}
+
+.chat-box .chat-holder {
+    width: 450px;
+    height: 450px;
+    background: palegreen;
+    margin: 0 auto;
+}
+
+.chat-box .chat-holder div.message {
+    padding: 9px;
+    background: red;
+    display: block;
+    position: relative;
+    margin: 10px;
+    margin-right: 30px;
+    border-radius: 9px
+}
+
+.chat-box .message-input {
+    margin: 0 auto;
+    width: 450px;
+    display: block;
+    margin-top: 20px;
+}
+
+.chat-box .message-send {
+    margin: 0 auto;
+    width: 450px;
+    height: 30px;
+    display: block;
+    margin-top: 20px;
+}

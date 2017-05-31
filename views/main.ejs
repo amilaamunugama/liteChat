@@ -1,0 +1,31 @@
+<link rel="stylesheet" href="/public/main.css"/>
+
+<script src="jquery.js" type="application/javascript"></script>
+<script src="socket.io.js" type="application/javascript"></script>
+<script src="/public/main.js" type="application/javascript"></script>
+
+<div class="chat-box">
+    <div class="chat-holder">
+    </div>
+    <textarea rows="5" class="message-input"></textarea>
+    <button class="message-send">Send</button>
+</div>
+
+<script>
+    var socket = io();
+
+    $(".message-send").off("click").on("click", function () {
+        socket.emit('message', $(".message-input").val()
+        );
+    })
+
+    socket.on("loginRequest", function (data) {
+        LiteChat.Common.prompt("Enter User Name", function (name) {
+            socket.emit("login", name);
+        })
+    })
+
+    socket.on("displayMessage", function (data) {
+        LiteChat.Main.addMessage(data.message);
+    })
+</script>
